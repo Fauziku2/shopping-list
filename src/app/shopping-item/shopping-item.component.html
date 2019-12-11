@@ -27,11 +27,11 @@
 
 <h2 id="shopping-list">Shopping List</h2>
 
-<div *ngFor="let item of shoppingItemList">
+<div *ngFor="let item of shoppingItemList" class="shopping-items-div">
   <div id="checkbox">
     <input type="checkbox" name="" [checked]="item.itemBought" (click)="updateItemCheckbox(item)">
   </div>
-  <div id="item-name">
+  <div id="item-name" (click)="getItem(item._id)">
     {{item.itemName}}
   </div>
   <div id="item-bought">

@@ -27,6 +27,17 @@ export class ShoppingItemComponent implements OnInit {
   getItems() {
     this.dataService.getShoppingItems().subscribe((items: any) => {
       this.shoppingItemList = items;
+      console.log('shoppingItemList', this.shoppingItemList);
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  getItem(itemId: string) {
+    this.dataService.getShoppingItem(itemId).subscribe(item => {
+      console.log('item', item);
+    }, err => {
+      console.log(err);
     });
   }
 

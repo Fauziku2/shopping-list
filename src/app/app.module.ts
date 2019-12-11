@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
+import { LoggerService } from './logger.service';
 import { ShoppingItemComponent } from './shopping-item/shopping-item.component';
 import { HttpService } from './http.service';
 
@@ -22,6 +23,7 @@ import { HttpService } from './http.service';
   ],
   providers: [
     DataService,
+    LoggerService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpService, multi: true },
   ],
   bootstrap: [AppComponent]
